@@ -1,0 +1,1 @@
+mvn eclipse:eclipse -Dmaven.test.skipt=true -DdownloadSources=true
