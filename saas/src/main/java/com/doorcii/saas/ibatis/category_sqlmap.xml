@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="saas">
+    
+	<typeAlias alias="categoryDO" type="com.doorcii.saas.domains.CategoryDO" /> 
+	<resultMap id="saas.category" class="categoryDO" >
+		<result column="ID" property="id" />
+		<result column="NAME" property="name" />
+	</resultMap>
+	
+	<parameterMap class="java.util.HashMap" id="dateParam">
+	    <parameter property="result"  javaType="java.sql.ResultSet"  mode="OUT" resultMap="saas.category" />
+	    <parameter property="date" jdbcType="VARCHAR" javaType="String" mode="IN"/>
+	</parameterMap>
+	
+	<procedure id="saas.queryCanReserveCategory" parameterMap="dateParam">
+	    {? = CALL GET_RESERVE_CATEGORY_BY_DATE(?)}   
+	</procedure>
+	
+</sqlMap>

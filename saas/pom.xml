@@ -7,14 +7,12 @@
   <version>1.0-SNAPSHOT</version>
   <name>saas Maven Webapp</name>
   <url>http://maven.apache.org</url>
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+  
+  <properties>
+       <org.springframework.version>3.0.5.RELEASE</org.springframework.version>
+       <downloadSources>true</downloadSources>
+  </properties>
+
   <build>
     <finalName>saas</finalName>
         <filters> <!-- 过滤器，用于过滤resource中的各个文件 -->
@@ -58,4 +56,183 @@
 	</plugin>
   </plugins>
   </build>
+  <dependencies>
+      
+     <dependency>
+       <groupId>junit</groupId>
+       <artifactId>junit</artifactId>
+       <version>4.4</version>
+       <scope>test</scope>
+     </dependency>
+     
+     <dependency>  
+         <groupId>asm</groupId>  
+         <artifactId>asm-commons</artifactId>  
+         <version>2.2.3</version>  
+     </dependency>  
+     <dependency>  
+         <groupId>asm</groupId>  
+         <artifactId>asm</artifactId>  
+         <version>2.2.3</version>  
+     </dependency> 
+        
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-core</artifactId>
+	    <version>${org.springframework.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-expression</artifactId>
+	    <version>${org.springframework.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-beans</artifactId>
+	    <version>${org.springframework.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-aop</artifactId>
+	    <version>${org.springframework.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-context</artifactId>
+	    <version>${org.springframework.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-context-support</artifactId>
+	    <version>${org.springframework.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-tx</artifactId>
+	    <version>${org.springframework.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-jdbc</artifactId>
+	    <version>${org.springframework.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-orm</artifactId>
+	    <version>${org.springframework.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-oxm</artifactId>
+	    <version>${org.springframework.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-web</artifactId>
+	    <version>${org.springframework.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-webmvc</artifactId>
+	    <version>${org.springframework.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-webmvc-portlet</artifactId>
+	    <version>${org.springframework.version}</version>
+	</dependency>
+    
+    <dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-ibatis</artifactId>
+		<version>2.0.8</version>
+	</dependency>
+    
+    <dependency>
+		<groupId>org.apache.ibatis</groupId>
+		<artifactId>ibatis-sqlmap</artifactId>
+		<version>2.3.4.726</version>
+	</dependency>
+            
+    <!-- log4j -->
+    <dependency>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+        <version>1.2.9</version>
+    </dependency>
+    
+    <dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>servlet-api</artifactId>
+		<version>2.5</version>
+		<scope>provided</scope>
+	</dependency>
+	
+    <dependency>
+		<groupId>org.apache.velocity</groupId>
+		<artifactId>velocity</artifactId>
+		<version>1.7</version>
+	</dependency>
+     
+    <dependency>
+		<groupId>org.apache.velocity</groupId>
+		<artifactId>velocity-tools</artifactId>
+		<version>2.0</version>
+	</dependency>
+    
+    <dependency>  
+        <groupId>commons-logging</groupId>  
+        <artifactId>commons-logging</artifactId>  
+        <version>1.1.1</version>  
+    </dependency>  
+    
+    <dependency>       
+      <groupId>org.apache.commons</groupId>
+	  <artifactId>commons-lang3</artifactId>
+	  <version>3.3.2</version>
+    </dependency>
+    
+    <dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>5.0.8</version>
+		<scope>compile</scope>
+	</dependency>
+    
+    <dependency>
+		<groupId>commons-dbcp</groupId>
+		<artifactId>commons-dbcp</artifactId>
+		<version>1.4</version>
+	</dependency>
+     
+    <dependency>       
+      <groupId>org.apache.commons</groupId>
+	  <artifactId>commons-lang3</artifactId>
+	  <version>3.3.2</version>
+    </dependency>
+    
+    <dependency>  
+	    <groupId>org.codehaus.jackson</groupId>  
+	    <artifactId>jackson-core-asl</artifactId>  
+	    <version>1.8.4</version>  
+	</dependency>  
+	<dependency>  
+	    <groupId>org.codehaus.jackson</groupId>  
+	    <artifactId>jackson-mapper-asl</artifactId>  
+	    <version>1.8.4</version>  
+	</dependency>
+    
+    <dependency>
+		<groupId>org.codehaus.jackson</groupId>
+		<artifactId>jackson-mapper-asl</artifactId>
+		<version>1.9.13</version>
+	</dependency>
+    <dependency>
+		<groupId>org.codehaus.jackson</groupId>
+		<artifactId>jackson-core-asl</artifactId>
+		<version>1.9.13</version>
+	</dependency>
+    
+  </dependencies>
+  
 </project>
