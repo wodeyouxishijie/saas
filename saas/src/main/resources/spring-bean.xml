@@ -9,9 +9,15 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context-3.0.xsd" default-autowire="byName">
 
-	   <!-- dao start -->
-	   <bean id="commonDAO" class="com.doorcii.saas.dao.impl.CommonDAOImpl">
+	   <bean id="coreInterface" class="com.doorcii.saas.interfaces.ServiceInterfacesImpl"></bean>
+	
+	   <bean id="commonManager" class="com.doorcii.saas.manager.CommonManager"></bean>
+	   
+	   <bean id="functionNameHandle" class="com.doorcii.saas.handler.DAOFunctionNameHandle">
+	   		<property name="procedureList">
+	   			<list>
+	   				<value>GET_RESERVE_CATEGORY_BY_DATE</value>
+	   			</list>
+	   		</property>
 	   </bean>
-	   <!-- dao end -->
-	    
 </beans>

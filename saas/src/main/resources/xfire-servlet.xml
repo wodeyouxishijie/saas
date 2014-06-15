@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">  
+<beans>   
+    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">   
+        <property name="urlMap">  
+            <map>  
+                <entry key="/coreService.ws">  
+                    <ref bean="xfireWebService"/>    
+                </entry>   
+            </map>   
+        </property>  
+      </bean>   
+        
+      <bean id="xfireWebService" parent="webService" class="org.codehaus.xfire.spring.remoting.XFireExporter">   
+        <property name="serviceBean">   
+            <ref bean="coreInterface"/>   
+        </property>   
+        <property name="serviceClass">   
+            <value>com.doorcii.saas.interfaces.ServiceInterfaces</value>   
+        </property>   
+        <property name="inHandlers">   
+            <list>   
+                <ref bean="domInHandler"/>   
+                <ref bean="wss4jInHandlerSign"/>   
+                <ref bean="validateUserTokenHandler"/>  
+            </list>   
+        </property>
+      </bean>   
+      
+      <bean id="domInHandler" class="org.codehaus.xfire.util.dom.DOMInHandler"/>   
+      
+      <bean id="wss4jInHandlerSign" class="org.codehaus.xfire.security.wss4j.WSS4JInHandler">  
+	        <property name="properties">  
+	          <props>  
+	            <prop key="action">Signature</prop>  
+	            <prop key="signaturePropFile">insecurity_sign.properties</prop>  
+	            <prop key="passwordCallbackClass">com.doorcii.saas.handler.PasswordHandler</prop>  
+	          </props>  
+	        </property>  
+	  </bean>
+      <bean id="validateUserTokenHandler" class="org.springside.bookstore.plugins.xfire.wss4j.WSS4JTokenHandler"/>  
+      
+      <bean id="webService" class="org.codehaus.xfire.spring.remoting.XFireExporter" abstract="true">  
+        <property name="serviceFactory">  
+            <ref bean="xfire.serviceFactory" />  
+        </property>  
+        <property name="xfire">  
+            <ref bean="xfire" />  
+        </property>  
+     </bean>  
+     
+     
+</beans> 

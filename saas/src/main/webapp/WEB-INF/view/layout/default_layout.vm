@@ -1,0 +1,9 @@
+<html>
+    <head>
+        <title>default title</title>
+	</head>
+	<body>
+		layout
+		$screen_content
+    </body>	
+</html>	

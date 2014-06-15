@@ -10,7 +10,8 @@
        http://www.springframework.org/schema/context/spring-context-3.0.xsd" default-autowire="byName">
 
 	   <!-- dao start -->
-	   <bean id="categoryDAO" class="com.doorcii.saas.dao.impl.CategoryDAOImpl"></bean>
+	   <bean id="commonDAO" class="com.doorcii.saas.dao.impl.CommonDAOImpl">
+	   </bean>
 	   <!-- dao end -->
 	    
 </beans>

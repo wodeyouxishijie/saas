@@ -10,12 +10,11 @@
 	</resultMap>
 	
 	<parameterMap class="java.util.HashMap" id="dateParam">
-	    <parameter property="result"  javaType="java.sql.ResultSet"  mode="OUT" resultMap="saas.category" />
-	    <parameter property="date" jdbcType="VARCHAR" javaType="String" mode="IN"/>
+	    <parameter property="DATE" jdbcType="VARCHAR" javaType="java.lang.String"  mode="IN"  />
 	</parameterMap>
 	
-	<procedure id="saas.queryCanReserveCategory" parameterMap="dateParam">
-	    {? = CALL GET_RESERVE_CATEGORY_BY_DATE(?)}   
+	<procedure id="saas.queryCanReserveCategory" parameterMap="dateParam"  resultMap="saas.category">
+	    {CALL $function$(?)}   
 	</procedure>
-	
+	<!-- {?=CALL GET_RESERVE_CATEGORY_BY_DATE(?)}    -->
 </sqlMap>
