@@ -21,7 +21,7 @@ import com.doorcii.saas.daos.CommonDAO;
  */
 public class CommonDAOImpl extends BaseDAO implements CommonDAO {
 
-	public static final Logger logger = Logger.getLogger("DAO-");
+	public static final Logger logger = Logger.getLogger("DAO-LOG");
 	
 	private static final String CALL = "{CALL ";
 	

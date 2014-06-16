@@ -173,7 +173,13 @@ public enum CategoryErrors {
 	
 	UPDATE_PWD_FAILED("修改密码失败",10041),
 	
-	PROCEDURE_DOES_NOT_EXIST("存储过程不存在",10042);
+	PROCEDURE_DOES_NOT_EXIST("存储过程不存在",10042),
+	
+	WS_TOKEN_ERROR("TOKEN错误",10043),
+	
+	CERTI_ERROR ("认证失败",10044);
+	
+	
 	
 	private String msg;
 	

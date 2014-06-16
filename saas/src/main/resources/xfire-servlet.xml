@@ -20,12 +20,17 @@
         </property>   
         <property name="inHandlers">   
             <list>   
-                <ref bean="domInHandler"/>   
-                <ref bean="wss4jInHandlerSign"/>   
-                <ref bean="validateUserTokenHandler"/>  
+                <!--<ref bean="domInHandler"/>   
+                 ref bean="wss4jInHandlerSign"/ --> 
+                <ref bean="authHandler"/>
             </list>   
         </property>
       </bean>   
+      
+      <bean id="authHandler" class="com.doorcii.saas.handler.AuthenticationHandler">
+          <constructor-arg index="0" value="testname"></constructor-arg>
+          <constructor-arg index="1" value="testpwd"></constructor-arg>
+      </bean>
       
       <bean id="domInHandler" class="org.codehaus.xfire.util.dom.DOMInHandler"/>   
       
@@ -34,11 +39,9 @@
 	          <props>  
 	            <prop key="action">Signature</prop>  
 	            <prop key="signaturePropFile">insecurity_sign.properties</prop>  
-	            <prop key="passwordCallbackClass">com.doorcii.saas.handler.PasswordHandler</prop>  
 	          </props>  
 	        </property>  
 	  </bean>
-      <bean id="validateUserTokenHandler" class="org.springside.bookstore.plugins.xfire.wss4j.WSS4JTokenHandler"/>  
       
       <bean id="webService" class="org.codehaus.xfire.spring.remoting.XFireExporter" abstract="true">  
         <property name="serviceFactory">  

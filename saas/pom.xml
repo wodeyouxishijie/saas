@@ -192,12 +192,20 @@
 	  <version>3.3.2</version>
     </dependency>
     
+    <!-- mysql -->
     <dependency>
 		<groupId>mysql</groupId>
 		<artifactId>mysql-connector-java</artifactId>
 		<version>5.0.8</version>
 		<scope>compile</scope>
 	</dependency>
+    
+    <!-- sqlserver -->
+    <dependency>
+      <groupId>net.sourceforge.jtds</groupId>
+      <artifactId>jtds</artifactId>
+      <version>1.2.4</version>
+    </dependency>
     
     <dependency>
 		<groupId>commons-dbcp</groupId>
