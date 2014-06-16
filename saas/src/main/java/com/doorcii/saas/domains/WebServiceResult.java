@@ -36,7 +36,6 @@ public class WebServiceResult {
 	
 	public static WebServiceResult getDefaultWebServiceResult() {
 		WebServiceResult r = new WebServiceResult(FAILED);
-		r.setErrorMsg("DEFAULT_ERROR");
 		return r;
 	}
 
@@ -62,6 +61,12 @@ public class WebServiceResult {
 
 	public void setModelWrapperList(List<Map<String, String>> modelWrapperList) {
 		this.modelWrapperList = modelWrapperList;
+	}
+
+	@Override
+	public String toString() {
+		return "WebServiceResult [success=" + success + ", errorMsg="
+				+ errorMsg + ", modelWrapperList=" + modelWrapperList + "]";
 	}
 	
 }

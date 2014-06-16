@@ -3,8 +3,8 @@
   
 <log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/' >
   
-	<appender name="PROJECT-LOG" class="org.apache.log4j.DailyRollingFileAppender">  
-		<param name="File" value="${log4j.logRoot}/saas.log" />
+	<appender name="PROJECT-LOG" class="org.apache.log4j.ConsoleAppender">  
+		<!--  <param name="File" value="${log4j.logRoot}/saas.log" />-->
 		<param name="append" value="true" />
         <param name="encoding" value="UTF-8"/>
 		<param name="threshold" value="info"/>
