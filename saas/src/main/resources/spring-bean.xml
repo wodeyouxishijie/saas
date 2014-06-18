@@ -17,6 +17,13 @@
 	   		<property name="procedureList">
 	   			<list>
 	   				<value>GET_RESERVE_CATEGORY_BY_DATE</value>
+	   				<value>GET_DOC_BY_CATE_DATE</value>
+	   				<value>GET_TIME_BY_DOCID_DATE</value>
+	   				<value>GET_SEQUENCE_NO</value>
+	   				<value>RESERVE</value>
+	   				<value>RESERVE_WITHOUT_CARD</value>
+	   				<value>CHECK_HOSCARDNO</value>
+	   				<value>RESERVE_RECORDS</value>
 	   			</list>
 	   		</property>
 	   </bean>
